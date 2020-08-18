@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="https://cn.vuejs.org/images/icons/favicon-16x16.png" type="image/x-icon">
+  <title>SSE</title>
+  <style>
+    h3{
+      text-align: center;
+    }
+    #content{
+      height: 400px;
+      width: 70%;
+      margin: 0 auto;
+      border: 3px solid #FF6700;
+      overflow-y: auto;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>SSE Test</h3>
+  <div id="content"></div>
+  <script>
+    var node = document.querySelector("#content")
+    // var source = new EventSource('http://127.0.0.1:9087/misc/message');
+    var source = new EventSource('http://i4.motorstore.cn/api/misc/message');
+    source.onmessage = function(event){
+      node.innerHTML += `<p>${event.data}</p>`;
+    }
+  </script>
+</body>
+
+</html>

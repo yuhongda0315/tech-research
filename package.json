@@ -1,0 +1,34 @@
+{
+  "name": "research",
+  "version": "1.0.0",
+  "description": "test testt test hahah kkkk dddd 123` 890",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "showdown": "git+https://github.com/showdownjs/showdown.git",
+    "textlint": "^11.5.0",
+    "textlint-rule-no-todo": "^2.0.1"
+  },
+  "devDependencies": {
+    "docslint": "^0.4.0",
+    "textlint-rule-max-number-of-lines": "^1.0.3",
+    "textlint-rule-no-start-duplicated-conjunction": "^2.0.2"
+  },
+  "scripts": {
+    "check": "./node_modules/.bin/textlint docs/*.md",
+    "lint": "./node_modules/.bin/docslint docs/*.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuhongda0315/research.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuhongda0315/research/issues"
+  },
+  "homepage": "https://github.com/yuhongda0315/research#readme"
+}

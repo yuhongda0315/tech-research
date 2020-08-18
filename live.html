@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Live</title>
+  <script src="https://cdn.ronghub.com/RongIMLib-2.5.8.js"></script>
+  <script src="https://cdn.ronghub.com/RongRTC-3.2.2.js"></script>
+</head>
+
+<body>
+  <button onclick="publish()">发布</button>
+  <script>
+    RongIMLib.RongIMClient.init('z3v5yqkbv8v30');
+    RongIMClient.setConnectionStatusListener({
+      onChanged: function (status) {
+        console.log(status);
+      }
+    });
+    RongIMClient.setOnReceiveMessageListener({
+      onReceived: function (message) {
+        console.log(message);
+      }
+    });
+    RongIMClient.connect('jsrHWhXFtbPP3BD4swsPwWHUbZzxaqB7ideXWWShdTDXeC6uUBR3RlIWOtRB2ffg@', {
+      onSuccess: function (userId) {
+        console.log('Connect successfully.' + userId);
+      },
+      onTokenIncorrect: function () {
+        console.log('token 无效');
+      },
+      onError: function (errorCode) {
+        console.log(info);
+      }
+    });
+
+    let rongRTC = new RongRTC({
+      RongIMLib: RongIMLib,
+      mode: RongRTC.Mode.LIVE,
+      //直播类型，默认音视频
+      liveType: RongRTC.LiveType.AUDIO_AND_VIDEO,
+      //直播角色，默认主播
+      liveRole: RongRTC.ROLE.AUDIENCE,   
+      created: function () {
+      },
+      mounted: function () {
+      },
+      destroyed: function () {
+      },
+      error: function (error) {
+      }
+    });
+
+    let { Room, Stream, Message, Device, Storage, StreamType } = rongRTC;
+
+    var room = new Room({
+      id: 'room001',
+      joined: function (user) {
+        // user.id 加入房间
+      },
+      left: function (user) {
+        // user.id 离开房间
+      }
+    });
+
+    let stream = new Stream({
+      /* 成员已发布资源，此时可按需订阅 */
+      published: function (user) {
+
+      },
+      /* 成员已取消发布资源，此时需关闭流 */
+      unpublished: function (user) {
+        stream.unsubscribe(user);
+      },
+      /* 成员禁用摄像头时触发，此时需关闭视频流 */
+      disabled: function (user) {
+        stream.unsubscribe(user);
+      },
+      /* 成员启用摄像头时触发，此时需要重新打开视频流 */
+      enabled: function (user) {
+        stream.subscribe(user);
+      },
+      /* 成员禁用麦克风时触发 */
+      muted: function (user) {
+
+      },
+      /* 成员禁用麦克风时触发，此时需要重新打开此成员声音 */
+      unmuted: function (user) {
+        stream.subscribe(user);
+      }
+    });
+
+    function publish() {
+      let roomUser = {
+        id: '13269772769_aj4w_web'
+      };
+      room.join(roomUser).then(() => {
+        console.log('join successfully');
+        navigator.getUserMedia({ video: true, audio: true }, function (mediaStream) {
+          let user = {
+            id: roomUser.id,
+            stream: {
+              tag: 'rongrtc',
+              type: StreamType.AUDIO_AND_VIDEO,
+              mediaStream: mediaStream
+            }
+          };
+          stream.publish(user).then((result) => {
+            console.log('发布成功', result);
+          }, error => {
+            console.log(error);
+          });
+        }, function (error) {
+          console.log(error)
+        })
+      }, error => {
+        console.log(error);
+      });
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+{
+  "name": "Chatroom",
+  "func": {
+    "create": {
+      "param": {
+        "id": {
+          "must": true,
+          "type": "string",
+          "range": "1-64"
+        },
+        "name": {
+          "must": true,
+          "type": "string",
+          "range": "1-64"
+        }
+      },
+      "data": {
+        "format": "chatroom[{{id}}]={{name}}"
+      }
+    },
+    "destory": {
+      "param": {
+        "id": {
+          "must": true,
+          "type": "string",
+          "range": "1-64"
+        }
+      },
+      "data": {
+        "format": "chatroomId={{id}}"
+      }
+    },
+    "get": {
+      "param": {
+        "id": {
+          "must": true,
+          "type": "string",
+          "range": "1-64"
+        },
+        "count": {
+          "must": true,
+          "type": "number"
+        },
+        "order": {
+          "must": true,
+          "type": "number",
+          "range": "1-64"
+        }
+      },
+      "data": {
+        "format": "chatroomId={{id}}&count={{count}}&order={{order}}"
+      },
+      "resp": [
+        "users|members"
+      ]
+    }
+  },
+  "isExist": {
+    "param": {
+      "id": {
+        "must": true,
+        "type": "string",
+        "range": "1-64"
+      },
+      "members": {
+        "must": true,
+        "type": "array",
+        "range": "1-1000"
+      }
+    },
+    "data": {
+      "format": "chatroomId={{id}}|userId={{id}}"
+    }
+  }
+}

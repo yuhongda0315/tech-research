@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introjs</title>
+  <script src="./libs/intro.js"></script>
+  <link rel="stylesheet" href="./libs/introjs.css">
+  <style>
+    .container1,.container2,.container3,.container4 {
+      height: 50px;
+      width: 500px;
+      background-color: #FF67;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container1">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+  <div class="container2">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+  <div class="container3">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+  <div class="container4">Lorem ipsum dolor sit amet consectetur adipisicing1</div>
+  <script>
+    var intro = introJs();
+    intro.setOptions({
+      steps: [
+        {
+          intro: "Hello world!"
+        },
+        {
+          element: document.querySelector('.container1'),
+          intro: "This is a tooltip."
+        },
+        {
+          element: document.querySelector('.container2'),
+          intro: "Ok, wasn't that fun?",
+          position: 'right'
+        },
+        {
+          element: '.container3',
+          intro: 'More features, more fun.',
+          position: 'left'
+        },
+        {
+          element: '.container4',
+          intro: "Another step.",
+          position: 'bottom'
+        }
+      ]
+    });
+
+    intro.start();
+
+  </script>
+</body>
+
+</html>

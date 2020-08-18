@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>RongCloud</title>
+  <link rel="icon" type="image/png"
+    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABj1BMVEUAAAAAmf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf8Amf////+DuqFKAAAAg3RSTlMAAA8iKSQUBEfF4+nl0qdgGQEKvPzQYSCNnTgHtviZFQKYEDq0w7XB4Pv+pBEDV3NuSAWz2xwICyFkzP2GFoVdUdzneaLtQbD1egYfJxOupZHxTjLkPfqyadObbQ4w2lxKlD+vSZJah6EMLNjq+a1jcs+VG8SKfd4oTBdrcQmD8lWfztrZ8isAAAABYktHRIRi0FpxAAAAB3RJTUUH4AoRCB8qYHcPiQAAAYpJREFUOMvNkuk/AmEQx3fIESEJoeSWlLTuilKu1plb7uQIOXPf5h83u9vWFnnLvJrPM99n5jcHw/xDA8jKVuTk5gFkiucrCwpVRcUl6h8QKC0FTRkKpi2v0ED650pdVXWNHuNmqDWmJoG6ekRlQ2NTc0urqY0Ic7tFAMCa02HrtBuB7ULs7oHePlbTP+AwIzpdVqDEg0MmLSV0uFnPsNdnFT9Bz4gTcXSMAPW4Waw54ecmpzipKkzP0Nssx7BzkigMzMtEASwsIqoWmKVCxOWVVd8aESu9INccpGbXGRcF2jcANrcQvQo5ANukIshQJcMOkO2SY5f3DaEJSsrs0XuYB/ap8YMfgEMqcRQBOD4hx5+iUiwROkWMnp1fXPJ96GXjl0RyV3wkPopAOJEi0SZct8THQAkxNikRiUEBqG8WKRZ13N7xRe4FQjZqfln3bp/t4RGeDEScPE9FUpYla+tFxy/ZqYqlrTtJRF7fMGnfDoYI1hOLYsaTE7RNv398Zj5acT6WX8/+L+wLZgiKRBfFIE8AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTYtMTAtMTdUMDg6MzE6NDIrMDI6MDCCTwQ1AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE2LTEwLTE3VDA4OjMxOjQyKzAyOjAw8xK8iQAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAABXelRYdFJhdyBwcm9maWxlIHR5cGUgaXB0YwAAeJzj8gwIcVYoKMpPy8xJ5VIAAyMLLmMLEyMTS5MUAxMgRIA0w2QDI7NUIMvY1MjEzMQcxAfLgEigSi4A6hcRdPJCNZUAAAAASUVORK5CYII="
+    sizes="32x32" />
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      background-color: #cccce0;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .rong-buttons {
+      position: absolute;
+      top: 200px;
+      right: 6%;
+    }
+
+    .rong-button {
+      height: 50px;
+      width: 150px;
+      margin: 20px 0;
+    }
+
+    .rong-container {
+      width: 1200px;
+      height: 900px;
+      margin: 0 auto;
+    }
+
+    .rong-group {
+      float: left;
+      width: 30%;
+      text-align: center;
+    }
+
+    .rong-member {
+      line-height: 50px;
+      background-color: lavender;
+      margin: 5px;
+      position: relative;
+    }
+
+    .rong-seq {
+      position: absolute;
+      left: 32%;
+      top: 28%;
+      border-radius: 50%;
+      background-color: #6060a3;
+      height: 26px;
+      width: 26px;
+      line-height: 26px;
+      color: #FFF;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="rong-container" id="app">
+    <div class="rong-group" v-for="(group) in groups">
+      <h3>{{group.name}}</h3>
+      <ul class="rong-members rong-float" v-for="(member, index) in group.members">
+        <li class="rong-member">
+          <span class="rong-seq">{{index + 1}}</span> {{member}}
+        </li>
+      </ul>
+    </div>
+    <div class="rong-buttons">
+      <button class="rong-button" @click="start()">{{label}}</button>
+    </div>
+  </div>
+
+</body>
+<!-- Vue -->
+<script src="./libs/vue.js"></script>
+<script src="./libs/underscore.js"></script>
+<script>
+  var timer = 0, groupIndex = 0;
+  var globalMembers = [
+    '王珏', '王宇同', '冯思', '张一帆', '罗敏丹', '张晓翔',
+    '闫焓', '王永皓', '李晓黎', '刘松', '何荣祥', '李萌伊', '闫森', '徐丹丹',
+    '李骏', '吕朋', '李雪萌', '赵婧同', '秦荣', '祝星耀', '郭宗奎', '顾丛峰'
+  ];
+  var defaultMembers = ['于洪达', '邹岳', '林光柘'];
+
+  new Vue({
+    el: '#app',
+    data: {
+      label: '开始',
+      selectedIndex: -1,
+      isRunging: false,
+      members: JSON.parse(JSON.stringify(globalMembers)),
+      groups: [{
+        name: 'A 组',
+        members: []
+      }, {
+        name: 'B 组',
+        members: []
+      },
+      {
+        name: 'C 组',
+        members: []
+      }]
+    },
+    methods: {
+      start: function () {
+        var context = this;
+        context.isRunging = true;
+        context.members = JSON.parse(JSON.stringify(globalMembers));
+        var members = context.members;
+        context.groups = context.groups.map((map) => {
+          map.members = [];
+          return map;
+        })
+        timer = setInterval(() => {
+          if (members.length <= 0) {
+            pushDefault(context);
+            var shuffleCount = 0;
+            var timer = setInterval(() => {
+              if (shuffleCount >= 50) {
+                clearInterval(timer);
+              }
+              shuffle(context);
+              shuffleCount += 1;
+            }, 50);
+            clear(context);
+            return;
+          }
+          if (groupIndex >= 3) {
+            groupIndex = 0;
+          }
+          var index = Math.floor(Math.random() * members.length);
+          var name = members.splice(index, 1)[0];
+          context.groups[groupIndex].members.push(name);
+          groupIndex += 1;
+        }, 200);
+      }
+    }
+  });
+  function pushDefault(context) {
+    var len = _.range(3).length;
+    for (var i = 0; i < len; i++) {
+      context.groups[i].members.push(defaultMembers[i]);
+    }
+  }
+  function shuffle(context) {
+    var { groups } = context;
+    var _groups = _.map(context.groups, (group) => {
+      let { members } = group;
+      group.members = _.shuffle(members);
+      return group;
+    });
+    _.extend(context, {
+      groups: _groups
+    });
+  }
+  function clear(context) {
+    context.isRunging = false;
+    context.label = '开始';
+    return clearInterval(timer);
+  }
+</script>
+
+</html>

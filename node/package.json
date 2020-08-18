@@ -1,0 +1,38 @@
+{
+  "name": "research",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ejs-test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "msg": "commitlint -E $HUSKY_GIT_PARAMS"
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "node ./node_modules/@commitlint/cli/lib/cli.js -g commitlint.config.js --env $HUSKY_GIT_PARAMS"
+    }
+  },
+
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "rongcloud-sdk": "^3.0.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8"
+  },
+  "config": {
+     "commitizen": {
+       "path": "cz-customizable"
+     }
+   }
+}

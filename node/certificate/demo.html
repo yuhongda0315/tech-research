@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Demo</title>
+</head>
+<body>
+  <!-- <script src="http://cdn.ronghub.com/RongIMLib-2.3.2.js"></script> -->
+  <video id="video" autoplay style="width: 480px;height: 320px"></video>
+  <!-- <img src="http://rongcloud-image.cn.ronghub.com/FlL-CRckGGnEgXE9iMRSbGwXtaLE?e=2147483647&token=CddrKW5AbOMQaDRwc3ReDNvo3-sL_SO1fSUBKV3H:TPaoq1wLDJSzoDzQeWk5fuWrEXc=" alt=""> -->
+  
+  <a href="http://rongcloud-file.cn.ronghub.com/o_1cjd722tp9hr1od71rv7tkis9f14.txt?attname=test.txt&e=2147483647&token=livk5rb3__JZjCtEiMxXpQ8QscLxbNLehwhHySnX:7Ux8D--EZsO6lsMOobv5l6lH1NI=" download>【下载】</a>
+ <script>
+    var video = document.getElementById('video')
+    var constraints = {
+      audio: true, 
+      video: true
+    };
+    navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+      video.srcObject = stream
+    }, (error) => {
+      console.error(error.name || error)
+    })
+  </script>
+</body>
+</html>

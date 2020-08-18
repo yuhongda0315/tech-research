@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>getUserMedia</title>
+  <style>
+    video {
+      height: 300px;
+      width: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <video></video>
+  <button onclick="disableVideo()">禁用摄像头</button>
+  <button onclick="enableVideo()">启用摄像头</button>
+  <script>
+    let node = document.querySelector('video');
+    let stream = null;
+    let constraints = {
+      video: true,
+      audio: {
+        
+          deviceId: '1366fc05843271c6bd503fd57e0166d4e5520f388d97d5ed9d750a09960b4efa',
+        // mandatory: {
+          // chromeMediaSourceId: '1366fc05843271c6bd503fd57e0166d4e5520f388d97d5ed9d750a09960b4efa'
+        // }
+      }
+    };
+    let videoTrack = null;
+    let successCallback = (_stream) => {
+      node.srcObject = _stream;
+      node.play();
+      stream = _stream;
+    };
+    let errorCallback = (error) => {
+      console.log(error);
+    };
+    function disableVideo() {
+      var videoTracks = stream.getVideoTracks()
+      let track = videoTracks[0];
+    }
+    function enableVideo() {
+
+    }
+    navigator.getUserMedia(constraints, successCallback, errorCallback);
+  </script>
+</body>
+
+</html>

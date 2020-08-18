@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mutation</title>
+</head>
+<body>
+  <div id="log"></div>
+  <div id="target"></div>
+  <button onclick="change()">修改</button>
+  <script>
+    const logNode = document.querySelector('#log');
+    const targetNode = document.querySelector('#target');
+    const config = {
+      childList: true,
+      characterDataOldValue: true
+    };
+    function change(){
+      targetNode.innerHTML += Date.now() + '\t';
+    }
+    
+    const mutationCallback = (mutationsList) => {
+      console.log(mutationsList);  
+    };
+    
+    const observer = new MutationObserver(mutationCallback);
+    observer.observe(targetNode, config);
+  </script>
+</body>
+</html>

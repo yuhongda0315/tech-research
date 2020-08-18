@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CaptureVideoStream</title>
+  <style>
+    video{
+      width: 500px;
+      height: 500px;;
+    }
+  </style>
+</head>
+<body>
+  <video id="resource" src="./heal-the-world.mp4" autoplay controls></video>
+  <video id="target" autoplay controls></video>
+  <script>
+    let resourceNode = document.querySelector('#resource');
+    let targetNode = document.querySelector('#target');
+    let stream = resourceNode.captureStream();
+    targetNode.srcObject = stream;
+  </script>
+</body>
+</html>
